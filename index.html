@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duzbucaqli Kalkulyatoru</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h2>Duzbucaqli Uzunluğu və Eni</h2>
+    <form id="kalkulyatorForm">
+        <label for="uzunluq">Uzunluq:</label>
+        <input type="number" id="uzunluq" name="uzunluq" required><br><br>
+        <label for="en">En:</label>
+        <input type="number" id="en" name="en" required><br><br>
+        <button class="primary" type="button" onclick="perimetriHesabla()">Perimetr</button>
+        <button type="button" onclick="saheniHesabla()">Sahə</button>
+    </form>
+    <p id="resault"></p>
+
+    <script>
+        // Perimetri hesablama funksiyası
+        function perimetriHesabla() {
+            var uzunluq = parseFloat(document.getElementById("uzunluq").value);
+            var en = parseFloat(document.getElementById("en").value);
+            var perimetri = 2 * (uzunluq + en);
+            document.getElementById("resault").innerText = "Duzbucaqli perimetri: " + perimetri;
+        }
+
+        // Sahəni hesablama funksiyası
+        function saheniHesabla() {
+            var uzunluq = parseFloat(document.getElementById("uzunluq").value);
+            var en = parseFloat(document.getElementById("en").value);
+            var sahe = uzunluq * en;
+            document.getElementById("resault").innerText = "Duzbucaqli sahəsi: " + sahe;
+        }
+    </script>
+</body>
+</html>
